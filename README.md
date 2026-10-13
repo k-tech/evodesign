@@ -153,6 +153,21 @@ scripts/evolve.sh
 Do not start a manual run while the scheduled run is active. The runner uses an
 external lock and aborts instead of running two generations concurrently.
 
+### Counter Smoke Test
+
+Before changing `scripts/evolve.sh`, run the read-only counter sanity check:
+
+```bash
+bash scripts/evolution_smoke_test.sh
+```
+
+It verifies the `10#$number` numeric parsing and the highest-on-disk
+algorithm against an isolated temp directory. Run it any time the runner's
+generation-numbering logic is touched. Preflight also performs a
+`LIVENESS_DRIFT` cross-check (helper vs. highest gen-N.json on disk) and
+logs a `freeze_watch=...` line so a frozen runner becomes visible in the
+preflight trace on the next run.
+
 ### Disable Daily Evolution
 
 View the single Codex automation in the Codex task settings, then pause or
