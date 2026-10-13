@@ -1,0 +1,30 @@
+{
+  "generation": 19,
+  "previousGeneration": 18,
+  "date": "2026-10-13",
+  "timestamp": "2026-10-13T09:00:00-07:00",
+  "timezone": "America/Los_Angeles",
+  "promptVersionBefore": "v1.0",
+  "promptVersionAfter": "v1.0",
+  "decision": "CHANGE",
+  "status": "completed",
+  "recentNoChangeStreak": 0,
+  "mainWeakness": "The page's latest-verified surfaces still described Generation 008 even though Generation 019 was now on disk.",
+  "designLesson": "When the runner is repaired, the page must advance with the new evidence in the same cycle, or the trust principle from the prior CHANGE is undone.",
+  "reason": "Runner fix landed in commit b39a4a4. The stand-in NO_CHANGE records (gen-009..gen-018) document the gap. The smallest useful change is to advance every latest-verified surface from Generation 008 to Generation 019 and document the gap closure in the verified history list.",
+  "websiteFilesChanged": [
+    "index.html"
+  ],
+  "evidenceFilesAdded": [
+    "reflections/2026-10-13-gen-019.md",
+    "generations/gen-019.json",
+    "logs/2026-10-13-gen-019.log"
+  ],
+  "filesChanged": [
+    "index.html",
+    "reflections/2026-10-13-gen-019.md",
+    "generations/gen-019.json",
+    "logs/2026-10-13-gen-019.log"
+  ],
+  "reflection": "reflections/2026-10-13-gen-019.md"
+}

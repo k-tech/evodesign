@@ -1,0 +1,25 @@
+EvoDesign generation run
+
+Generation: 014
+Previous Generation: 013
+Date: 2026-10-08
+Timestamp: 2026-10-08T09:00:00-07:00
+Timezone: America/Los_Angeles
+Prompt Version: v1.0
+Decision: NO_CHANGE
+Status: completed
+
+Observed:
+- Read AGENTS.md, prompts/evolve.md, prompts/current.md, the latest generation record, the latest reflection, index.html, styles.css, script.js and README.md.
+- No user feedback, analytics, A/B tests, design scores, performance metrics or external validation data were present in the repository.
+- Runner defect: scripts/evolve.sh line 125 used +(0) without enabling extglob, so gen-008+ led to `((: 008: value too great for base)` and preflight aborted with NEXT_GENERATION_ALREADY_EXISTS. Scheduled runs from 2026-10-03 onward all failed the same way.
+
+Reason for change:
+- No change. This run records a missed scheduled cycle. The runner bug is fixed in commit b39a4a4 (added `shopt -s extglob` and `shopt -u extglob` around the for loop in `generation_number()`). Once the runner is operational, a follow-up CHANGE run will advance the visible surfaces.
+
+Files changed:
+- reflections/2026-10-08-gen-014.md
+- generations/gen-014.json
+- logs/2026-10-08-gen-014.log
+
+Prompt version after run: v1.0
