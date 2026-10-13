@@ -118,6 +118,7 @@ generation_number() {
   local path name number
   local highest=0
   shopt -s nullglob
+  shopt -s extglob
   for path in generations/gen-*.json; do
     name="$(basename "$path")"
     if [[ "$name" =~ ^gen-([0-9]+)\.json$ ]]; then
@@ -128,6 +129,7 @@ generation_number() {
     fi
   done
   shopt -u nullglob
+  shopt -u extglob
   printf '%d' "$highest"
 }
 
