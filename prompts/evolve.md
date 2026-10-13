@@ -56,3 +56,36 @@ reason. Do not overwrite an existing generation record, delete historical
 evidence, commit, push, or edit protected infrastructure files. The runner
 performs validation and owns Git operations. The runner also maintains the
 root `rsi-status.json` audit snapshot; do not edit that file directly.
+
+## Freeze Recovery
+
+When `rsi-status.json.consecutiveNoChange >= 2` AND the gap since
+`rsi-status.json.lastRun.date` is greater than one scheduler window, treat the
+current cycle as a freeze-recovery run, not a true design judgment:
+
+- State explicitly in `Observation` and `Main Weakness` that the runner was
+  frozen and why the visible surfaces are being brought back into alignment
+  with the on-disk evidence (cite the runner commit that fixed the freeze, if
+  any).
+- Restrict any website change to the smallest useful one that re-aligns
+  visible surfaces with `rsi-status.json.currentGeneration`. Do not invent a
+  novel design change just because the runner has been silent.
+- Never choose `CHANGE` for freeze-recovery cycles whose only reason is
+  "fix the gap"; the change must also reflect a real, named weakness from
+  the latest reflection or a documented evidence gap that blocks a meaningful
+  previous lesson.
+- Always produce one `NO_CHANGE` reflection that documents the freeze window
+  (with the exact dates and last-run timestamp) so the audit trail explains
+  why the page did not advance on those days.
+
+## Counter Robustness
+
+- The runner uses `$((10#$number))` (explicit base-10 prefix) to parse every
+  numeric generation field. Never reintroduce `${number##+(0)}`,
+  `[ $n -gt 0 ]` or any other pattern that depends on `extglob` or that lets
+  leading zeros reach arithmetic context; bash 5.x will treat them as invalid
+  octal and fail silently inside `(( ))`. The runner's preflight already
+  enforces a liveness cross-check (`LIVENESS_DRIFT` if the helper's count
+  disagrees with the highest file on disk) and a freeze-watch log line
+  (`PASS freeze_watch=...`); respect both when writing reflections or
+  proposing prompt changes.

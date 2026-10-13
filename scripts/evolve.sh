@@ -117,23 +117,60 @@ sync_git() {
 generation_number() {
   local path name number
   local highest=0
-  shopt -s nullglob
   shopt -s extglob
   for path in generations/gen-*.json; do
     name="$(basename "$path")"
     if [[ "$name" =~ ^gen-([0-9]+)\.json$ ]]; then
       number="${BASH_REMATCH[1]}"
-      number="${number##+(0)}"
-      [[ -n "$number" ]] || number=0
-      (( number > highest )) && highest=$number
+      # Explicit base-10 prefix so any leading zeros never enter the octal
+      # arithmetic path. Replaces the brittle extglob-only strip.
+      number=$((10#$number))
+      if (( number > highest )); then highest=$number; fi
     fi
   done
-  shopt -u nullglob
   shopt -u extglob
   printf '%d' "$highest"
 }
 
+disk_max_generation_number() {
+  local path name number highest=0
+  shopt -s nullglob
+  for path in generations/gen-*.json; do
+    name="$(basename "$path")"
+    [[ "$name" =~ ^gen-([0-9]+)\.json$ ]] || continue
+    number=$((10#${BASH_REMATCH[1]}))
+    if (( number > highest )); then highest=$number; fi
+  done
+  shopt -u nullglob
+  printf '%d' "$highest"
+}
+
 prompt_version() { sed -nE 's/^Version:[[:space:]]*(v[0-9]+\.[0-9]+).*$/\1/p' prompts/current.md | head -n 1; }
+
+freeze_watch_note() {
+  "$PYTHON_PATH" - <<'PY'
+import datetime as dt, json, sys
+from pathlib import Path
+from zoneinfo import ZoneInfo
+try:
+    s = json.loads(Path("rsi-status.json").read_text(encoding="utf-8"))
+except Exception as exc:
+    print(f"unreadable:{exc}")
+    sys.exit(0)
+last = (s.get("lastRun") or {}).get("date")
+streak = int(s.get("consecutiveNoChange", 0) or 0)
+if not last:
+    print("none")
+else:
+    today = dt.datetime.now(ZoneInfo("America/Los_Angeles")).date()
+    last_d = dt.date.fromisoformat(last)
+    age = (today - last_d).days
+    if streak >= 2 and age >= 2:
+        print(f"FREEZE_RECOVERY streak={streak} days_since_last_run={age}")
+    else:
+        print(f"ok streak={streak} days_since_last_run={age}")
+PY
+}
 
 pacific_timestamp() {
   "$PYTHON_PATH" - "$TIMEZONE" <<'PY'
@@ -326,6 +363,8 @@ preflight() {
   local current next current_pad next_pad
   current="$(generation_number)"
   (( current >= 1 )) || fail "NO_GENERATION_RECORD"
+  disk_max="$(disk_max_generation_number)"
+  (( current == disk_max )) || fail "LIVENESS_DRIFT helper=$current disk=$disk_max"
   next=$((current + 1))
   current_pad="$(printf '%03d' "$current")"
   next_pad="$(printf '%03d' "$next")"
@@ -341,6 +380,9 @@ preflight() {
   log "PASS origin/main=available"
   log "PASS current_generation=$current_pad"
   log "PASS next_generation=$next_pad"
+  log "PASS generation_helper_matches_disk=$current_pad"
+  freeze_note="$(freeze_watch_note 2>/dev/null || echo probe_failed)"
+  log "PASS freeze_watch=$freeze_note"
   log "PASS codex=$CODEX_PATH"
   log "PASS codex_model=$CODEX_MODEL"
   log "PASS codex_auth=usable"
