@@ -8,7 +8,7 @@ STATE_DIR="${EVODESIGN_STATE_DIR:-${XDG_STATE_HOME:-${USER_HOME:-/tmp}/.local/st
 TIMEZONE="America/Los_Angeles"
 REMOTE="origin"
 BRANCH="main"
-CODEX_MODEL="${EVODESIGN_CODEX_MODEL:-gpt-5.5}"
+CODEX_MODEL="${EVODESIGN_CODEX_MODEL:-gpt-6-luna}"
 
 mkdir -p "$STATE_DIR"
 RUN_ID="$(date -u +%Y%m%dT%H%M%SZ)"

@@ -116,7 +116,7 @@ One Codex automation runs daily at **09:00 America/Los_Angeles**. It uses the
 repository's `scripts/evolve.sh` runner and never starts a second concurrent run.
 Each next generation is created only by a verified scheduled or manual run; the current generation and recent decision are recorded in `rsi-status.json`.
 
-The runner uses `gpt-5.5` explicitly. It relies on the local Codex login, so no
+The runner uses the configured `gpt-6-luna` model by default. It relies on the local Codex login, so no
 GitHub Actions secret is required.
 
 
