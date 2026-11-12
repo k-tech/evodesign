@@ -1,0 +1,21 @@
+EvoDesign scheduled evolution run
+Generation: 020
+Previous Generation: 019
+Date: 2026-11-11
+Timestamp: 2026-11-11T18:35:40-08:00
+Timezone: America/Los_Angeles
+Prompt Version: v1.0
+Recent NO_CHANGE streak: 0
+Decision: CHANGE
+Status: completed
+
+Observation: Latest verified-history and current-status copy in index.html still described Generation 019. The run context establishes Generation 020 for 11 November 2026.
+Main weakness: The duplicated static latest-run labels were stale, making current evidence harder to identify.
+Reason: Align the latest visible labels and date, and add Generation 020 to the verified history. No prompt mutation was needed.
+Files changed:
+- index.html
+- reflections/2026-11-11-gen-020.md
+- generations/gen-020.json
+- logs/2026-11-11-gen-020.log
+
+No user feedback, analytics, scores, performance metrics, or external validation data were available. No tests were run. Git operations and rsi-status.json remain runner-owned.

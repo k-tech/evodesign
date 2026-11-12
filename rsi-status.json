@@ -3,8 +3,8 @@
   "project": "EvoDesign",
   "repository": "https://github.com/k-tech/evodesign",
   "productionUrl": "https://evodesign.pages.dev/",
-  "currentGeneration": 19,
-  "nextGeneration": 20,
+  "currentGeneration": 20,
+  "nextGeneration": 21,
   "promptVersion": "v1.0",
   "scheduler": {
     "provider": "Codex Automation",
@@ -14,18 +14,18 @@
     "status": "ACTIVE"
   },
   "lastRun": {
-    "generation": 19,
-    "previousGeneration": 18,
-    "date": "2026-10-13",
-    "timestamp": "2026-10-13T09:00:00-07:00",
+    "generation": 20,
+    "previousGeneration": 19,
+    "date": "2026-11-11",
+    "timestamp": "2026-11-11T18:35:40-08:00",
     "decision": "CHANGE",
     "status": "success",
     "evidence": {
-      "reflection": "reflections/2026-10-13-gen-019.md",
-      "generation": "generations/gen-019.json",
-      "log": "logs/2026-10-13-gen-019.log"
+      "reflection": "reflections/2026-11-11-gen-020.md",
+      "generation": "generations/gen-020.json",
+      "log": "logs/2026-11-11-gen-020.log"
     }
   },
   "consecutiveNoChange": 0,
-  "updatedAt": "2026-10-13T14:14:56Z"
+  "updatedAt": "2026-11-12T02:38:51Z"
 }
