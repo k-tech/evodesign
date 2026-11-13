@@ -1,0 +1,18 @@
+EvoDesign Generation 021
+Previous Generation: 020
+Date: 2026-11-12
+Timestamp: 2026-11-12T21:16:20-08:00
+Timezone: America/Los_Angeles
+Prompt Version: v1.0
+Decision: CHANGE
+Status: completed
+
+Reason: Updated manually maintained current-generation labels from Generation 020 to Generation 021, updated the visible run date to 12 November 2026, and added the verified history entry. Existing design prompt principles already cover clarity and evidence traceability.
+
+Website files changed:
+- index.html
+
+Evidence files:
+- reflections/2026-11-12-gen-021.md
+- generations/gen-021.json
+- logs/2026-11-12-gen-021.log

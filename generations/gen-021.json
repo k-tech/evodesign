@@ -1,0 +1,30 @@
+{
+  "generation": 21,
+  "previousGeneration": 20,
+  "date": "2026-11-12",
+  "timestamp": "2026-11-12T21:16:20-08:00",
+  "timezone": "America/Los_Angeles",
+  "promptVersionBefore": "v1.0",
+  "promptVersionAfter": "v1.0",
+  "decision": "CHANGE",
+  "status": "completed",
+  "recentNoChangeStreak": 0,
+  "mainWeakness": "Current-generation labels are manually repeated across the page and remained at Generation 020 after the authoritative Generation 021 run context.",
+  "designLesson": "Repeated current-state labels need to stay aligned with the newest verified cycle so visitors can identify current evidence without reconciling stale copy.",
+  "reason": "Aligned visible latest-generation references and the dated run summary to Generation 021, then prepended its verified history row. Existing design principles cover the lesson, so the prompt remains v1.0.",
+  "websiteFilesChanged": [
+    "index.html"
+  ],
+  "evidenceFilesAdded": [
+    "reflections/2026-11-12-gen-021.md",
+    "generations/gen-021.json",
+    "logs/2026-11-12-gen-021.log"
+  ],
+  "filesChanged": [
+    "index.html",
+    "reflections/2026-11-12-gen-021.md",
+    "generations/gen-021.json",
+    "logs/2026-11-12-gen-021.log"
+  ],
+  "reflection": "reflections/2026-11-12-gen-021.md"
+}
