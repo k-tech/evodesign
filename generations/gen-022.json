@@ -1,0 +1,32 @@
+{
+  "generation": 22,
+  "previousGeneration": 21,
+  "date": "2026-11-13",
+  "timestamp": "2026-11-13T17:05:36-08:00",
+  "timezone": "America/Los_Angeles",
+  "promptVersionBefore": "v1.0",
+  "promptVersionAfter": "v1.0",
+  "decision": "CHANGE",
+  "status": "completed",
+  "recentNoChangeStreak": 0,
+  "mainWeakness": "Current-generation details are copied into several independent HTML strings and become stale at each new run; the same weakness required correction in Generations 021 and 022.",
+  "designLesson": "Repeated status details should be rendered from one verified record to reduce visible disagreement without changing the established hierarchy.",
+  "reason": "Moved latest-run status labels and the newest history row to generation-record-driven rendering, correcting the recurring mismatch between the page and the authoritative run context.",
+  "websiteFilesChanged": [
+    "index.html",
+    "script.js"
+  ],
+  "evidenceFilesAdded": [
+    "reflections/2026-11-13-gen-022.md",
+    "generations/gen-022.json",
+    "logs/2026-11-13-gen-022.log"
+  ],
+  "filesChanged": [
+    "index.html",
+    "script.js",
+    "reflections/2026-11-13-gen-022.md",
+    "generations/gen-022.json",
+    "logs/2026-11-13-gen-022.log"
+  ],
+  "reflection": "reflections/2026-11-13-gen-022.md"
+}

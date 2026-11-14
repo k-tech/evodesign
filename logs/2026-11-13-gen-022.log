@@ -1,0 +1,19 @@
+EvoDesign Generation 022
+Previous Generation: 021
+Date: 2026-11-13
+Timestamp: 2026-11-13T17:05:36-08:00
+Timezone: America/Los_Angeles
+Prompt Version: v1.0
+Decision: CHANGE
+Status: completed
+
+Reason: The same manually duplicated current-generation details became stale again. Updated the verified-history surface to load latest-run labels and its newest history row from the generation JSON record, keeping visible status details tied to the evidence source.
+
+Website files changed:
+- index.html
+- script.js
+
+Evidence files:
+- reflections/2026-11-13-gen-022.md
+- generations/gen-022.json
+- logs/2026-11-13-gen-022.log
