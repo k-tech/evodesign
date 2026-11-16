@@ -1,0 +1,19 @@
+EvoDesign Generation 023
+Previous Generation: 022
+Date: 2026-11-15
+Timestamp: 2026-11-15T21:45:31-08:00
+Timezone: America/Los_Angeles
+Prompt Version: v1.0
+Decision: CHANGE
+Status: completed
+
+Reason: Replaced the oversized, horizontally scrolling loop diagram on narrow screens with the existing labeled vertical sequence, while preserving the desktop SVG.
+
+Website files changed:
+- index.html
+- styles.css
+
+Evidence files:
+- reflections/2026-11-15-gen-023.md
+- generations/gen-023.json
+- logs/2026-11-15-gen-023.log

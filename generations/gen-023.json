@@ -1,0 +1,32 @@
+{
+  "generation": 23,
+  "previousGeneration": 22,
+  "date": "2026-11-15",
+  "timestamp": "2026-11-15T21:45:31-08:00",
+  "timezone": "America/Los_Angeles",
+  "promptVersionBefore": "v1.0",
+  "promptVersionAfter": "v1.0",
+  "decision": "CHANGE",
+  "status": "completed",
+  "recentNoChangeStreak": 0,
+  "mainWeakness": "The evolution-loop section is awkward to read on narrow screens because the desktop SVG overflows the viewport and requires horizontal scrolling. The existing vertical sequence is not being used as a deliberate mobile presentation.",
+  "designLesson": "When a diagram cannot preserve legibility at phone width, use a purpose-built linear representation on small screens and keep the spatial diagram for larger viewports. A responsive alternative should replace the constrained view and remain accessible as an equivalent description.",
+  "reason": "Replaced the oversized, horizontally scrolling loop diagram on narrow screens with the existing labeled vertical sequence, while preserving the desktop SVG.",
+  "websiteFilesChanged": [
+    "index.html",
+    "styles.css"
+  ],
+  "evidenceFilesAdded": [
+    "reflections/2026-11-15-gen-023.md",
+    "generations/gen-023.json",
+    "logs/2026-11-15-gen-023.log"
+  ],
+  "filesChanged": [
+    "index.html",
+    "styles.css",
+    "reflections/2026-11-15-gen-023.md",
+    "generations/gen-023.json",
+    "logs/2026-11-15-gen-023.log"
+  ],
+  "reflection": "reflections/2026-11-15-gen-023.md"
+}

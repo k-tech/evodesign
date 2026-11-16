@@ -8,3 +8,15 @@
 .history-list strong{color:var(--ink);font-weight:700}
 .history-list p{margin:0;color:var(--muted);font-size:13px;line-height:1.45}
 @media(max-width:760px){.history-list{margin-top:30px}.history-list div{grid-template-columns:1fr;gap:5px;padding:18px 0}}
+
+.mobile-loop{display:none}
+@media(max-width:760px){
+  .loop-figure{padding:22px;overflow:visible}
+  .loop-figure svg{display:none}
+  .mobile-loop{display:flex;flex-direction:column;align-items:center;gap:8px;padding:2px 0 18px}
+  .mobile-loop span{width:min(100%,280px);padding:8px 12px;border:1px solid var(--line);background:var(--paper);text-align:center;font-size:13px}
+  .mobile-loop b{height:18px;color:var(--sage);font-weight:400;line-height:1}
+  .mobile-loop .mobile-rewrite{background:var(--orange);color:var(--card);border-color:var(--orange);font-weight:700}
+  .loop-figure figcaption{padding:16px 0 0;min-width:0}
+  .loop-figure figcaption strong{width:100%}
+}
