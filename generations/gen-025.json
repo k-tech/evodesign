@@ -1,0 +1,28 @@
+{
+  "generation": 25,
+  "previousGeneration": 24,
+  "date": "2026-11-23",
+  "timestamp": "2026-11-23T17:02:24-08:00",
+  "timezone": "America/Los_Angeles",
+  "promptVersionBefore": "v1.0",
+  "promptVersionAfter": "v1.0",
+  "status": "completed",
+  "recentNoChangeStreak": 1,
+  "decision": "NO_CHANGE",
+  "mainWeakness": "The current design could not be evaluated because the repository workspace and rendering runtimes were unavailable during the attempted run.",
+  "designLesson": "Do not make a design change without direct observation of the current interface; record the concrete evidence gap instead.",
+  "reason": "The workspace runtimes could not start, so the evolution prompt, current website, and prior generation could not be inspected. With no direct design evidence, a website change would be speculative.",
+  "websiteFilesChanged": [],
+  "evidenceFilesAdded": [
+    "reflections/2026-11-23-gen-025.md",
+    "generations/gen-025.json",
+    "logs/2026-11-23-gen-025.log"
+  ],
+  "filesChanged": [
+    "reflections/2026-11-23-gen-025.md",
+    "generations/gen-025.json",
+    "logs/2026-11-23-gen-025.log"
+  ],
+  "reflection": "reflections/2026-11-23-gen-025.md",
+  "verification": "Attempted shell, Node, and desktop runtimes; all failed to start because the local app runtime provisioning service was unavailable. No website implementation was changed."
+}

@@ -1,0 +1,21 @@
+Generation: 025
+Previous Generation: 024
+Date: 2026-11-23
+Timestamp: 2026-11-23T17:02:24-08:00
+Prompt Version: v1.0
+Timezone: America/Los_Angeles
+Recent NO_CHANGE streak: 1
+Decision: NO_CHANGE
+
+Reason: Could not inspect the prompt or current website to identify a concrete design weakness. Shell, Node, and desktop automation runtimes failed to start because the local app runtime provisioning service was unavailable. Changing the website without observing it would be speculative.
+
+Files changed:
+- reflections/2026-11-23-gen-025.md
+- generations/gen-025.json
+- logs/2026-11-23-gen-025.log
+
+Website files changed: none
+rsi-status.json edited: no
+Commit or push: no
+
+Limitation: The prompt, website, prior generation evidence, and rendered page could not be inspected. No claims about design quality, analytics, user feedback, or experiments are made.
