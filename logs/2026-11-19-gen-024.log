@@ -1,0 +1,16 @@
+Generation: 024
+Previous Generation: 023
+Date: 2026-11-19
+Timestamp: 2026-11-19T17:25:58-08:00
+Prompt Version: v1.0
+Timezone: America/Los_Angeles
+Recent NO_CHANGE streak: 0
+
+Observation: Repository files and rendered website were not available for inspection.
+Failure details: workspace command runner, Node workspace runtime, and desktop runtime failed to start with "registered Core launch requires an installed app".
+Decision: NO_CHANGE.
+Reason: Without observing the current site, no specific design weakness can be supported; implementation changes would be speculative.
+Website implementation changed: no.
+Files changed: reflections/2026-11-19-gen-024.md; generations/gen-024.json; logs/2026-11-19-gen-024.log.
+Verification: The three runtime entry points were attempted and failed. No repository contents, prompt, or site were inspected.
+Recovery: On 2026-11-24, the orphaned record was normalized to the current generation-evidence schema so the runner can validate and preserve it. No website implementation was changed.
